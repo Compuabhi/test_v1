@@ -1,10 +1,78 @@
 <!-- index.html-->
 
-{% extends "base.html" %}
-{% block title %}Home{% endblock %}
-{% block body %}
-<div class="jumbotron">
-  <h1>Flask Is Awesome</h1>
-  <p class="lead">And I'm glad to be learning so much about it!</p>
+
+
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<title> wishing you happy new year</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content=" wishing you happy Chhath Pooja." />
+    <!-- <meta property="og:url" content="http://my-magic.in/?n=" /> -->
+    <meta property="og:description" content="CLICK HERE" />
+    <meta property="og:site_name" content="Create Wishes for Loved Ones" />
+    <meta property="og:image" content="http://my-magic.in/hdus.png">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    <script type=text/javascript src="{{url_for('static', filename='js/jquery-2.1.4.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='js/notify.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='js/main.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+
+<div class="page-wrapper">
+<div class="header"></div>
+<div class="poster-wrapper">
+	<div class="poster-container">
+     <div class="poster" back>
+     <img src="https://media1.giphy.com/media/rjkJD1v80CjYs/giphy.gif" alt="happy how i met your mother GIF">
+         <figure class="fig1">
+           <h1>{{fest_msg}}</h1>
+           <h1>{{fest_msg}}</h1>
+           <h1>{{fest_msg}}</h1>
+           <h1>{{fest_msg}}</h1>
+         </figure>
+         <figure class="fig2">
+           <h1>{{to_name}}</h1>
+           <h1>{{to_name}}</h1>
+           <h1>{{to_name}}</h1>
+           <h1>{{to_name}}</h1>
+         </figure>
+     </div>   
+     <div class="msg">
+        <p>May this New Year brings you luck, happiness, joy and success in your life. Wish you and your family a Happy New Year.</p>
+        <p>{{from_name}} </p>
+     </div>
+    </div>
+
+	<div class="btns-container">
+    <div class="btns">
+        {% if flag == 'home' %}
+        <form action="javascript:;" onsubmit="main_obj.getLink(this)">
+        <input type="text" name="to_name" placeholder="Enter Friend's Name">
+        <input type="text" name="from_name" placeholder="Enter Your Name">
+        <input type="submit" name="get_link" value="Submit">
+        <p class="get_link">
+            Click submit to get link and send(paste) it to share over facebook, whatsapp etc. and wish your Bae/Buddy.
+        </p>
+        {% else %}
+        <form action="javascript:;" onsubmit="main_obj.redirectToHome(this)">
+        <input type="submit" value="Create Your Own">
+        <p>
+            Click here and create your own personalized messages for loved ones.   
+        </p>
+        </form>
+        {% endif %}
+    </div>
+        
+    </div>
 </div>
-{% endblock %}
+<div class="footer"></div>
+</div>
+</body>
+</html>
+
+
+
+

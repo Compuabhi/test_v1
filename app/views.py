@@ -5,7 +5,7 @@ from app import app
 
 @app.route('/')
 def index():
-	return xmas()
+	return hny()
 
 
 @app.route('/about')
@@ -22,4 +22,7 @@ def xmas():
 
 @app.route('/hny')
 def hny():
-	return render_template('newyear.html')
+	if 't' in request.args and 'f' in request.args:
+		return render_template('newyear.html',to_name=request.args['t'], from_name=request.args['f'],fest_msg='Happy New Year',flag='not_home')
+	else:
+		return render_template('newyear.html',to_name='Whom To Send', from_name='Your Name',fest_msg='Happy New Year',flag='home')

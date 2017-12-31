@@ -7,7 +7,7 @@
 
 
 // }
-
+var domainName = ['http://127.0.0.1:5000','http://wittylitty.in'];
 var main_obj = {
 	getLink: function(obj){
 		if ($('input[name=from_name]').val())
@@ -15,7 +15,7 @@ var main_obj = {
 	if ($('input[name=to_name]').val())
 		var t = $('input[name=to_name]').val()
 	if(f && t){
-		var	url = 'wittylitty.in/xmas?f='+ f + '&t='+t;
+		var	url = domainName[0]+'/hny?f='+ f + '&t='+t;
 		copyUrl(url,function(status){
 			console.log('status:',status,'element', obj);
 			$('input[name="get_link"]').notify( "Link Copied! Send the link to your buddy.", { position:"bottom center",className: "success" });
@@ -27,7 +27,7 @@ var main_obj = {
 	}
 	},
 	redirectToHome: function(){
-	var new_url = 'wittylitty.in/xmas'
+	var new_url = domainName[0] + '/hny';
 	window.location = new_url;
 	}
 
